@@ -41,6 +41,7 @@ resource "aws_ebs_volume" "web" {
     Name = "${var.project_name}-web-ebs"
   }
 }
+
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
@@ -89,7 +90,7 @@ resource "aws_security_group" "allow_http" {
     tags = {
       Name = "allow_http"
     }
-  }
+}
 
 
 // 16kB tamaño maximo
@@ -119,6 +120,7 @@ resource "aws_eip" "eip" {
     Name        = "${var.project_name}-web-epi"
   }
 }
+
 resource "aws_volume_attachment" "web" {
   device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.web.id

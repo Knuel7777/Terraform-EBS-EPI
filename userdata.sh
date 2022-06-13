@@ -11,6 +11,6 @@ echo "/dev/nvme1n1  /mnt/demo_web_volume    xfs   defaults 0 2" >> /etc/fstab
 sudo rm -rf /var/www/html
 sudo mkdir /mnt/demo_web_volume/html
 sudo ln -s /mnt/demo_web_volume/html /var/www/html
-sudo echo "<h2>Hola Terraform</h2>" >> /var/www/html/index.html
+sudo echo "<h2>Hola Mundo - Terraform :D</h2>" >> /var/www/html/index.html
 sudo chown -R www-data:www-data /var/www/html/index.html
 sudo chmod -R 755 /var/www/html/index.html
